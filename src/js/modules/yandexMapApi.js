@@ -2,7 +2,7 @@ export default class {
     constructor () {}
 
     initMap() {
-        return new Promise ((resolve, reject) => ymaps.ready(resolve)
+        return new Promise ((resolve, reject) => ymaps.ready(resolve))
             .then(() => {
                 this.map = new ymaps.Map('map', {
                     center: [55.78874, 49.12214],
@@ -18,8 +18,7 @@ export default class {
                 this.map.geoObjects.add(this.cluster);
 
                 return this.map;
-            })
-        );
+            });
     }
 
     async getMapPosition(e) {
@@ -34,7 +33,7 @@ export default class {
     }
 
     createPlacemark(pos) {
-        const myPlacemark = new ymaps.Placemark({
+        const myPlacemark = new ymaps.Placemark(pos.coords, {
             hintContent: pos.address,
             balloonContent: `Мы кликнули на ${pos.address}`
         });
