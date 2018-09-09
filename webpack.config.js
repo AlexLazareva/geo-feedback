@@ -35,7 +35,7 @@ module.exports = {
         }),
         new ExtractTextPlugin('styles.css'),
         new HtmlPlugin({
-            title: 'Другофильтр',
+            title: 'Геоотзыв',
             template: './src/template/index.hbs'
         }),
         new CleanWebpackPlugin(['dist'])
